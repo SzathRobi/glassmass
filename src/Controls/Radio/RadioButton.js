@@ -26,7 +26,7 @@ function RadioButton({
     borderTop: '1px solid rgba(255,255,255,0.4)',
     borderBottom: '1px solid rgba(255,255,255,0.4)',
     borderRadius: '50%',
-    backgroundColor: 'rgba(220,220,220,0.5)',
+    backgroundColor: 'rgba(255,255,255,0.5)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
