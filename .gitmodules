@@ -1,0 +1,3 @@
+[submodule "glassmass"]
+	path = glassmass
+	url = ./example/node_modules/glassmass
