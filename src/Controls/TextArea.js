@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 
 function TextArea({
   title = 'Title',
-  cols = '30',
-  rows = '10',
+  cols = 30,
+  rows = 10,
   placeholder,
-  value = '',
+  value = undefined,
   onChange = () => {},
   required = false,
   readOnly = false,
@@ -23,7 +23,7 @@ function TextArea({
   }
 
   const title_style = {
-    transform: 'translateY(10px)'
+    margin: '0.5rem 0'
   }
 
   const textarea_style = {

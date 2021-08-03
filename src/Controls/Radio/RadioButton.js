@@ -8,14 +8,19 @@ function RadioButton({
   color = '#4FC3F7',
   name = 'name'
 }) {
+  const [hovered, setHovered] = useState(false)
+
   const radio_label = {
     display: 'flex',
     alignItems: 'center',
-    gap: '0.2rem'
+    //justifyContent: 'flex-start',
+    gap: '0.5rem',
+    cursor: 'pointer'
+    //margin: '0.5rem 0'
   }
   const radio_style = {
-    width: '1rem',
-    height: '1rem',
+    width: '0rem',
+    height: '0rem',
     opacity: 0
   }
 
@@ -31,7 +36,10 @@ function RadioButton({
     alignItems: 'center',
     justifyContent: 'center',
     transition: '300ms',
-    boxShadow: '3px 3px 3px rgba(0,0,0, 0.25)'
+    boxShadow: hovered
+      ? '5px 5px 5px rgba(0,0,0,0.5)'
+      : '3px 3px 3px rgba(0,0,0, 0.25)',
+    cursor: 'pointer'
   }
 
   const radio_innerCircle = {
@@ -44,7 +52,11 @@ function RadioButton({
   }
 
   return (
-    <label style={radio_label}>
+    <label
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={radio_label}
+    >
       <input
         style={radio_style}
         type='radio'

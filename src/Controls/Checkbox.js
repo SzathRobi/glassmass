@@ -1,35 +1,43 @@
 import React, { useState } from 'react'
 
-function Checkbox({ checked = false, onChange = null, color = '#4fc3f7' }) {
+function Checkbox({
+  checked = false,
+  onChange = null,
+  color = '#4fc3f7',
+  text = '',
+  value
+}) {
+  const [hovered, setHovered] = useState(false)
+
   const checkbox_label = {
     display: 'flex',
-    gap: '1rem',
-    alignItems: 'center',
-    fontSize: '2rem',
-    color: '#000'
+    gap: '0.5rem',
+    alignItems: 'center'
+    // margin: '0.5rem 0'
   }
 
   const checkbox_input = {
     opacity: '0',
-    width: '1em',
-    height: '1em'
+    width: '0.8em',
+    height: '0.5em'
   }
   const checkbox_style = {
-    display: 'inline-grid',
+    display: 'inline-block',
     width: '1.5rem',
     height: '1.5rem',
     borderRadius: '0.25rem',
-    //border: `0.1em solid ${color}`,
-
     backgroundColor: 'blue',
     transition: '300ms',
     backgroundColor: 'rgba(255,255,255, 0.5)',
     WebkitBackdropFilter: 'blur(10px)',
     backdropFilter: 'blur(10px)',
-    boxShadow: '3px 3px 3px rgba(0,0,0, 0.25)',
+    boxShadow: hovered
+      ? '5px 5px 5px rgba(0,0,0,0.5)'
+      : '3px 3px 3px rgba(0,0,0, 0.25)',
     borderTop: '1px solid rgba(255,255,255,0.4)',
     borderBottom: '1px solid rgba(255,255,255,0.4)',
-    boxSizing: 'border-box'
+    boxSizing: 'border-box',
+    cursor: 'pointer'
   }
 
   const svg_style = {
@@ -38,7 +46,11 @@ function Checkbox({ checked = false, onChange = null, color = '#4fc3f7' }) {
   }
 
   return (
-    <label style={checkbox_label}>
+    <label
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={checkbox_label}
+    >
       <span className='cheflexx__input'>
         <input
           style={checkbox_input}
@@ -46,6 +58,7 @@ function Checkbox({ checked = false, onChange = null, color = '#4fc3f7' }) {
           onChange={onChange}
           type='checkbox'
           name='checkbox'
+          value={value}
         />
         <span style={checkbox_style}>
           <svg
@@ -64,7 +77,7 @@ function Checkbox({ checked = false, onChange = null, color = '#4fc3f7' }) {
           </svg>
         </span>
       </span>
-      <span className='radio__label'>Checkbox</span>
+      <span className='radio__label'>{text}</span>
     </label>
   )
 }

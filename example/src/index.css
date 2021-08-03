@@ -1,3 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -14,6 +22,31 @@ code {
     monospace;
 }
 
+.bg {
+  background-image: url('./imgs/blue_cube.jpg');
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-top: 3.5rem;
+}
+
 .test {
   width: 20rem;
+}
+
+.components {
+  height: 100vh;
+  background-image: url('./imgs/CUBES_FRONT.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+@media (max-width: 767px) {
+  .bg {
+    flex-direction: column;
+  }
 }

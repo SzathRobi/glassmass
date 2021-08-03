@@ -5,21 +5,66 @@ import {
   Container,
   Input,
   RadioButton,
-  RadioGroup,
+  ControlGroup,
   Select,
-  TextArea
+  TextArea,
+  Header
 } from 'glassmass'
+import Components from './Components/Components'
 
 const App = () => {
-  const decor = {
-    background: '#ff00ff',
-    width: 300,
-    height: 300,
+  const intro_style = {
+    card: {
+      width: 300,
+      height: 350,
+      padding: '3rem 0',
+      padding: '3rem 2rem 0',
+      fontSize: '120%',
+      marginBottom: '2rem'
+    },
+    title: {
+      marginBottom: '1rem'
+    }
+  }
+
+  const formContainer_style = {
+    width: '40rem',
+    height: '80vh',
+    transform: 'translateY(-0.8rem)',
+    padding: '1rem 2rem',
+    position: 'relative'
+  }
+
+  const form_style = {
+    transform: 'translateY(2rem)'
+  }
+
+  const formControls_container = {
+    display: 'flex',
+    justifyContent: 'space-between'
+  }
+
+  const button_style = {
     position: 'absolute',
-    zIndex: -1,
-    left: '5%',
-    top: 150,
-    transform: 'rotate(45deg)'
+    bottom: '4rem',
+    left: '2rem'
+  }
+
+  const header_style = {
+    logo: {
+      flex: '1'
+    },
+    logo_link: {
+      color: '#4fc3f7'
+    },
+    nav: {
+      marginRight: '3rem'
+    },
+    link: {
+      padding: '0 0.5rem',
+      margin: '0 0.5rem',
+      color: '#000'
+    }
   }
 
   //test for button
@@ -28,16 +73,17 @@ const App = () => {
   }
 
   //test for select
-  const [testOpt, setTestOpt] = useState('')
-  const testFn = (value) => {
-    setTestOpt(value)
+  const [selectValue, setSelectValue] = useState('Awesome')
+  const updateSelectValue = (value) => {
+    setSelectValue(value)
   }
   //test for checkbox
-  const [checked, setChecked] = useState(false)
-  const updateChecked = () => setChecked(!checked)
+  const [checked_awesome, setChecked_awesome] = useState(true)
+  const [checked_cool, setChecked_cool] = useState(false)
+  const [checked_okey, setChecked_okey] = useState(false)
 
   //test for RadioGroup
-  const [radioValue, setRadioValue] = useState('male')
+  const [radioValue, setRadioValue] = useState('awesome')
   const updateRadioValue = (value) => setRadioValue(value)
 
   //test for Input
@@ -48,62 +94,114 @@ const App = () => {
   const [textareaValue, setTextareaValue] = useState('')
   const updateTextareaValue = (event) => setTextareaValue(event.target.value)
   return (
-    <div style={{ padding: '1rem 2rem' }}>
-      <Container>
-        <h1 className='test'>heheh</h1>
-        <Button onClick={() => logSomeShit()}>Lick Me</Button>
-      </Container>
-      <Select
-        title='Pick one'
-        onChange={testFn}
-        options={['Apple', 'Banana', 'Strawberry']}
-      />
-      <h1>{testOpt}</h1>
-      <Checkbox checked={checked} onChange={updateChecked} />
-      <p>Checkbox is {checked ? 'checked' : 'NOT checked'}</p>
-      <div style={decor} />
-
-      <RadioGroup title='Gender'>
-        <RadioButton
-          name={'gender'}
-          onChange={() => updateRadioValue('male')}
-          checked={radioValue === 'male'}
-          value='male'
-          text={'Male'}
-          color='#4FC3F7'
-        />
-        <RadioButton
-          name={'gender'}
-          onChange={() => updateRadioValue('female')}
-          checked={radioValue === 'female'}
-          value='female'
-          text={'Female'}
-          color='#4FC3F7'
-        />
-        <RadioButton
-          name={'gender'}
-          onChange={() => updateRadioValue('other')}
-          checked={radioValue === 'other'}
-          value='other'
-          text={'Other'}
-          color='#4FC3F7'
-        />
-      </RadioGroup>
-      <p>Radio value is: {radioValue}</p>
-
-      <Input
-        type='number'
-        title='Enter Your Name'
-        value={inputValue}
-        onChange={(event) => updateInputValue(event)}
-      />
-
-      <TextArea
-        title='Your Story'
-        value={textareaValue}
-        onChange={(event) => updateTextareaValue(event)}
-      />
-      <p>Text above is: {textareaValue}</p>
+    <div className='root' id='top'>
+      <Header>
+        <h3 style={header_style.logo}>
+          <a styles={header_style.logo_link} href='#top'>
+            GLASSY-UI
+          </a>
+        </h3>
+        <nav style={header_style.nav}>
+          <a style={header_style.link} href='#top'>
+            Home
+          </a>
+          <a style={header_style.link} href='#components'>
+            Components
+          </a>
+        </nav>
+      </Header>
+      <section className='bg'>
+        <article>
+          <Container style={intro_style.card}>
+            <h2 style={intro_style.title}>INTRO</h2>
+            <p>Welcome here in the world of glass my friend!</p>
+            <p>
+              If you love glassmorphism design you definetly should check this
+              library!
+            </p>
+          </Container>
+        </article>
+        <article>
+          <Container style={formContainer_style}>
+            <form>
+              <div>
+                <h3>Send Me Some Feedback</h3>
+                <p>
+                  Almost everything here made with glassy-ui. If you have any
+                  thoughts on what would you see in the next updates don’t
+                  hesitate to write me a messasge! I would appreciate it very
+                  much! :)
+                </p>
+              </div>
+              <div style={formControls_container}>
+                <div>
+                  <Input
+                    title='Your Email'
+                    placeholder='email@example.com'
+                    required
+                  />
+                  <TextArea
+                    title='Your Message'
+                    placeholder='Your message here...'
+                    required
+                  />
+                </div>
+                <div>
+                  <ControlGroup title='Radio Showcase'>
+                    <RadioButton
+                      value='awesome'
+                      onChange={(event) => updateRadioValue(event.target.value)}
+                      text='Awesome'
+                      checked={radioValue === 'awesome'}
+                    />
+                    <RadioButton
+                      value='cool'
+                      onChange={(event) => updateRadioValue(event.target.value)}
+                      text='Cool'
+                      checked={radioValue === 'cool'}
+                    />
+                    <RadioButton
+                      value='okey'
+                      onChange={(event) => updateRadioValue(event.target.value)}
+                      text='Okey'
+                      checked={radioValue === 'okey'}
+                    />
+                  </ControlGroup>
+                  <ControlGroup title='Checkbox Showcase'>
+                    <Checkbox
+                      text='Awesome'
+                      value='awesome'
+                      checked={checked_awesome}
+                      onChange={() => setChecked_awesome(!checked_awesome)}
+                    />
+                    <Checkbox
+                      text='Cool'
+                      value='cool'
+                      checked={checked_cool}
+                      onChange={() => setChecked_cool(!checked_cool)}
+                    />
+                    <Checkbox
+                      text='Okey'
+                      value='okey'
+                      checked={checked_okey}
+                      onChange={() => setChecked_okey(!checked_okey)}
+                    />
+                  </ControlGroup>
+                  <ControlGroup title='Select Showcase'>
+                    <Select
+                      value={selectValue}
+                      onChange={() => updateSelectValue()}
+                      options={['Awesome', 'Cool', 'Okey']}
+                    />
+                  </ControlGroup>
+                </div>
+              </div>
+              <Button style={button_style}>send message</Button>
+            </form>
+          </Container>
+        </article>
+      </section>
+      <Components />
     </div>
   )
 }

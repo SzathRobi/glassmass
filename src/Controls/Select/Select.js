@@ -14,7 +14,7 @@ function Select({ options = [1, 2, 3], value = 'title', onChange }) {
   }, [select_title])
 
   const select_wrapper = {
-    width: '7rem',
+    width: '10rem',
     position: 'relative',
     boxSizing: 'border-box',
     cursor: 'pointer',
@@ -22,7 +22,9 @@ function Select({ options = [1, 2, 3], value = 'title', onChange }) {
     overflow: 'hidden',
     boxShadow: '3px 3px 3px rgba(0,0,0, 0.25)',
     borderTop: '1px solid rgba(255,255,255,0.4)',
-    borderBottom: '1px solid rgba(255,255,255,0.4)'
+    borderBottom: '1px solid rgba(255,255,255,0.4)',
+    marginLeft: '0.5rem'
+    //margin: '0.5rem 0'
   }
 
   const select_style = {
@@ -44,7 +46,7 @@ function Select({ options = [1, 2, 3], value = 'title', onChange }) {
   return (
     <div style={select_wrapper}>
       <div onClick={() => setOpened(!opened)} style={select_style}>
-        <h4>{select_title}</h4>
+        <p>{select_title}</p>
       </div>
       <div>
         {opened &&

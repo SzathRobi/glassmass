@@ -9,12 +9,13 @@ function Option({ option, update_title, index }) {
     width: '100%',
     padding: '0.5rem',
     backgroundColor: hovered
-      ? 'rgba(255,255,255, 0.7)'
+      ? 'rgba(255,255,255, 0.8)'
       : 'rgba(255,255,255, 0.5)',
     WebkitBackdropFilter: 'blur(10px)',
     backdropFilter: 'blur(10px)',
     opacity: opacity,
-    transition: '300ms'
+    transition: '300ms',
+    transform: 'translateY(0.5rem)'
   }
 
   useEffect(() => {

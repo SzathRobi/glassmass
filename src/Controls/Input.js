@@ -4,11 +4,9 @@ function Input({
   type = 'text',
   placeholder = '',
   title = '',
-  value = '',
+  value = undefined,
   onChange = () => {},
   required = false,
-  onFocus = null,
-  onBlur = null,
   readOnly = false,
   autoFocus = false,
   color = '#4fc3f7',
@@ -24,7 +22,7 @@ function Input({
   }
 
   const title_style = {
-    transform: 'translateY(10px)'
+    margin: '0.5rem 0'
   }
 
   const input_style = {
