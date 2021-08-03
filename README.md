@@ -10,6 +10,18 @@
 npm install --save glassmass
 ```
 
+## Components
+
+1. Button
+2. Checkbox
+3. Container
+4. ControlGroup
+5. Header
+6. Input
+7. RadioButton
+8. Select
+9. TextArea
+
 ## Usage
 
 ```jsx
@@ -35,9 +47,28 @@ const App = () => {
     </section>
   )
 }
-
-con
 ```
+
+## Update Log
+
+### Version 1.0.1
+
+- Button
+- Checkbox
+- Container
+- ControlGroup
+- Header
+- Input
+- RadioButton
+- Select
+- TextArea
+
+---
+
+### Version 1.0.0
+
+- published on npm
+- added Card component
 
 ## License
 
