@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "56eea5d587418f62de170fb7fe529cae",
+    "revision": "543f83039e0fefbd37c31405b00187dd",
     "url": "/glassy-ui/index.html"
   },
   {
-    "revision": "c0f47029c09ea87b6fbd",
+    "revision": "442642f261a4ca3d622f",
     "url": "/glassy-ui/static/css/main.304282c5.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/glassy-ui/static/js/2.cb6cdf69.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c0f47029c09ea87b6fbd",
-    "url": "/glassy-ui/static/js/main.b08b3e17.chunk.js"
+    "revision": "442642f261a4ca3d622f",
+    "url": "/glassy-ui/static/js/main.5e98acdc.chunk.js"
   },
   {
     "revision": "9674f476d4442a95f8d3",

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/glassy-ui/precache-manifest.095f913c3734c641cebad53506cef0e8.js"
+  "/glassy-ui/precache-manifest.763dad1a38b511a7c83a5359aa2a3ab8.js"
 );
 
 self.addEventListener('message', (event) => {

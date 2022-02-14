@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/glassy-ui/static/css/main.304282c5.chunk.css",
-    "main.js": "/glassy-ui/static/js/main.b08b3e17.chunk.js",
-    "main.js.map": "/glassy-ui/static/js/main.b08b3e17.chunk.js.map",
+    "main.js": "/glassy-ui/static/js/main.5e98acdc.chunk.js",
+    "main.js.map": "/glassy-ui/static/js/main.5e98acdc.chunk.js.map",
     "runtime-main.js": "/glassy-ui/static/js/runtime-main.54cd6f3c.js",
     "runtime-main.js.map": "/glassy-ui/static/js/runtime-main.54cd6f3c.js.map",
     "static/js/2.cb6cdf69.chunk.js": "/glassy-ui/static/js/2.cb6cdf69.chunk.js",
     "static/js/2.cb6cdf69.chunk.js.map": "/glassy-ui/static/js/2.cb6cdf69.chunk.js.map",
     "index.html": "/glassy-ui/index.html",
-    "precache-manifest.095f913c3734c641cebad53506cef0e8.js": "/glassy-ui/precache-manifest.095f913c3734c641cebad53506cef0e8.js",
+    "precache-manifest.763dad1a38b511a7c83a5359aa2a3ab8.js": "/glassy-ui/precache-manifest.763dad1a38b511a7c83a5359aa2a3ab8.js",
     "service-worker.js": "/glassy-ui/service-worker.js",
     "static/css/main.304282c5.chunk.css.map": "/glassy-ui/static/css/main.304282c5.chunk.css.map",
     "static/js/2.cb6cdf69.chunk.js.LICENSE.txt": "/glassy-ui/static/js/2.cb6cdf69.chunk.js.LICENSE.txt",
@@ -27,6 +27,6 @@
     "static/js/runtime-main.54cd6f3c.js",
     "static/js/2.cb6cdf69.chunk.js",
     "static/css/main.304282c5.chunk.css",
-    "static/js/main.b08b3e17.chunk.js"
+    "static/js/main.5e98acdc.chunk.js"
   ]
 }
